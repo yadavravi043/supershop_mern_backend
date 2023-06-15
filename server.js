@@ -1,6 +1,7 @@
 const app=require("./app");
 const cloudinary = require("cloudinary");
 const connectDatabase=require("./config/database")
+const PORT =process.env.PORT || 3003;
 const cors=require('cors')
 app.use(cors())
 require('dotenv').config()
@@ -23,7 +24,7 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
   });
 
-const server=app.listen(process.env.PORT,()=>
+const server=app.listen(PORT,()=>
 {
     console.log(`Server is working on ${process.env.PORT} `)
 
